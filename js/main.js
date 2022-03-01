@@ -213,7 +213,10 @@
 		$(window).stellar();
 	};
 
-	
+
+
+
+
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
