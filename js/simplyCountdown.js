@@ -5,7 +5,7 @@
  * License : MIT
  * Version : 1.3.2
  * Author : Vincent Loy <vincent.loy1@gmail.com>
- * Contributors :
+ * Contributors : 
  *  - Justin Beasley <JustinB@harvest.org>
  *  - Nathan Smith <NathanS@harvest.org>
  */
@@ -99,7 +99,7 @@
                 days: createCountdownElt(countdown, parameters, 'simply-days-section'),
                 hours: createCountdownElt(countdown, parameters, 'simply-hours-section'),
                 minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section'),
-/*                seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')*/
+                seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')
             };
         }
 
@@ -108,16 +108,16 @@
         return spanTag;
     };
 
-    /*
+    /**
      * simplyCountdown, create and display the coundtown.
      * @param elt
      * @param args (parameters)
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2019,
-                month: 10,
-                day: 11,
+                year: 2015,
+                month: 6,
+                day: 28,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -204,18 +204,6 @@
 
                     minutes = parseInt(secondsLeft / 60, 10);
                     seconds = parseInt(secondsLeft % 60, 10);
-                  } else {
-                    days = parseInt(-1*secondsLeft / 86400, 10);
-                    secondsLeft = secondsLeft % 86400;
-
-                    hours = parseInt(-1*secondsLeft / 3600, 10);
-                    secondsLeft = secondsLeft % 3600;
-
-                    minutes = parseInt(-1*secondsLeft / 60, 10);
-                    seconds = parseInt(-1*secondsLeft % 60, 10);
-                  }
-
-/*
                 } else {
                     days = 0;
                     hours = 0;
@@ -224,7 +212,7 @@
                     window.clearInterval(interval);
                     parameters.onEnd();
                 }
-*/
+
                 if (parameters.plural) {
                     dayWord = days > 1
                         ? parameters.words.days + parameters.words.pluralLetter
@@ -269,7 +257,6 @@
 
                     fullCountDown.seconds.amount.textContent = (parameters.zeroPad && seconds.toString().length < 2 ? '0' : '') + seconds;
                     fullCountDown.seconds.word.textContent = secondWord;
-
                 }
             };
 
